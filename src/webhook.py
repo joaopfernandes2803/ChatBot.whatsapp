@@ -4,7 +4,7 @@ from src.message_handler import process_message
 
 router = APIRouter()
 
-@router.ger('/webhook')
+@router.get('/webhook')
 async def verify_token(mode: str, challenge: str, token: str):
     if mode == "subscribe" and token == META_VERIFY_TOKEN:
         return int(challenge)
